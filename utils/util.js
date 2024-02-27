@@ -95,6 +95,8 @@ function writeFile(filename,content){
   return fs.appendFileSync(filename,content,'utf8');
 }
 
+
+
 /**
  * Reads the content of a file.
  * @param {string} filename - The name of the file.
@@ -103,6 +105,18 @@ function writeFile(filename,content){
 function readFile(filename){
     return fs.readFileSync(filename,'utf8')
 }
+
+/**
+ * Make sure the directory exists, otherwise create it.
+ * @param {string} dir - path.
+ * @returns {void}
+ */
+function ensurePath(dir){
+  if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir)
+  }
+}
+
 
 module.exports = {
     generateTx,
@@ -113,4 +127,5 @@ module.exports = {
     sleep,
     writeFile,
     readFile,
+    ensurePath,
 }
