@@ -1,0 +1,19 @@
+{
+  "name": "@arcologynetwork/frontend-util",
+  "version": "1.0.0",
+  "description": "This is a util for benchmark",
+  "main": "utils/util.js",
+  "scripts": {},
+  "author": "Arcology Network",
+  "license": "MIT",
+  "homepage": "https://arcology.network/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arcology-network/benchmarktools.git"
+  },
+  "keywords": [
+    "parallel execution",
+    "nodejs",
+    "arcology network"
+  ]
+}
