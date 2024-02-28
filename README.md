@@ -1,4 +1,4 @@
-<h1> Frontend Utilities  <img align="center" height="50" src="./img/home.svg">  </h1>
+<h1> Frontend Utilities  <img align="center" height="40" src="./img/home.svg">  </h1>
 This project contains a collection of frontend utilities used by Arcology Network.
 
 <h2> Functions   <img align="center" height="32" src="./img/code-circle.svg">  </h2>
