@@ -1,7 +1,7 @@
 {
   "name": "@arcologynetwork/frontend-util",
   "version": "1.0.1",
-  "description": "This is a util for benchmark",
+  "description": "A collection of frontend utilities used by Arcology Network",
   "main": "utils/util.js",
   "scripts": {},
   "author": "Arcology Network",
@@ -9,7 +9,7 @@
   "homepage": "https://arcology.network/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arcology-network/benchmarktools.git"
+    "url": "https://github.com/arcology-network/frontend-util.git"
   },
   "keywords": [
     "parallel execution",
