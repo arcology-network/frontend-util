@@ -13,6 +13,8 @@ This project contains a collection of frontend utilities used by Arcology Networ
 | `sleep(ms)`                     | Pauses the execution for the specified number of milliseconds.                    |
 | `writeFile(filename, content)`  | Appends content to a file.                                                        |
 | `readFile(filename)`            | Reads the content of a file.                                                      |
+| `newFile(filename)`             | Create a stream for writing files.                                                |
+| `appendTo(filehandle,content)`  | appending content to a file through a stream.                                     |
 | `ensurePath(dir)`               | Make sure the directory exists; otherwise, create it.                             |
 
 

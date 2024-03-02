@@ -105,7 +105,7 @@ function readFile(filename){
 }
 
 /**
- * Create a stream for write content to a file.
+ * Create a stream for writing files.
  * @param {string} filename - The name of the file.
  * @returns {writeStream}
  */
@@ -114,12 +114,12 @@ function newFile(filename){
 }
 
 /**
- * Appends content to a file with stream.
+ * Appending content to a file through a stream.
  * @param {filestream} filehandle - File stream.
  * @param {string} content - The content to append to the file.
  * @returns {void}
  */
-function AppendFile(filehandle,content){
+function appendTo(filehandle,content){
   filehandle.write(content);
 }
 
