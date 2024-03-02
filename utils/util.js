@@ -95,8 +95,6 @@ function writeFile(filename,content){
   return fs.appendFileSync(filename,content,'utf8');
 }
 
-
-
 /**
  * Reads the content of a file.
  * @param {string} filename - The name of the file.
@@ -105,6 +103,26 @@ function writeFile(filename,content){
 function readFile(filename){
     return fs.readFileSync(filename,'utf8')
 }
+
+/**
+ * Create a stream for write content to a file.
+ * @param {string} filename - The name of the file.
+ * @returns {writeStream}
+ */
+function newFile(filename){
+  return fs.createWriteStream(filename);
+}
+
+/**
+ * Appends content to a file with stream.
+ * @param {filestream} filehandle - File stream.
+ * @param {string} content - The content to append to the file.
+ * @returns {void}
+ */
+function AppendFile(filehandle,content){
+  filehandle.write(content);
+}
+
 
 /**
  * Make sure the directory exists, otherwise create it.
@@ -127,5 +145,7 @@ module.exports = {
     sleep,
     writeFile,
     readFile,
+    newFile,
+    AppendFile,
     ensurePath,
 }
