@@ -146,6 +146,6 @@ module.exports = {
     writeFile,
     readFile,
     newFile,
-    AppendFile,
+    appendTo,
     ensurePath,
 }
