@@ -182,4 +182,6 @@ module.exports = {
     newFile,
     appendTo,
     ensurePath,
+    startRpc,
+    rpcRequest,
 }
