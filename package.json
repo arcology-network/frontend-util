@@ -1,6 +1,6 @@
 {
   "name": "@arcologynetwork/frontend-util",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A collection of frontend utilities used by Arcology Network",
   "main": "utils/util.js",
   "scripts": {},
@@ -15,5 +15,8 @@
     "parallel execution",
     "nodejs",
     "arcology network"
-  ]
+  ],
+  "dependencies": {
+    "@mahsumurebe/jrpc-client": "^2.2.0"
+  }
 }

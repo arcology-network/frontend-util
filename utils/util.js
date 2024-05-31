@@ -1,4 +1,38 @@
 const fs = require('fs')
+const { JRPCClient, HttpAdapter } = require("@mahsumurebe/jrpc-client")
+
+/**
+ * Connect into RPC server and return a RPC client.
+ * @param {string} rpcurl - Json RPC url.
+ * @returns {Promise<Object>} - RPC client instance.
+ */
+async function startRpc(rpcurl) { 
+  const clientInstance = new JRPCClient(new HttpAdapter(rpcurl));
+  await clientInstance.start();
+  return clientInstance
+}
+
+/**
+ * Generates a transaction and waits for its completion.
+ * @param {Object} client - RPC client instance.
+ * @param {string} method - The method name for RPC request.
+ * @param {Array} paramsList - The argument list for the function call
+ * @returns {Promise<Object>} - A promise that resolves to the transaction receipt.
+ */
+async function rpcRequest(client,method,paramsList) { 
+  let block
+  await client.call({
+      id: 1,
+      jsonrpc: "2.0",
+      method: method,
+      params: paramsList,
+  }).then((b) => {
+      block=b.result;
+  }).catch((error) => {
+      block="";
+  })
+  return block;
+}
 
 /**
  * Generates a transaction and waits for its completion.
