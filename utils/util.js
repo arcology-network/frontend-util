@@ -1,5 +1,23 @@
 const fs = require('fs')
 const { JRPCClient, HttpAdapter } = require("@mahsumurebe/jrpc-client")
+const path = require('path');
+
+/**
+ * Connect into RPC server and return a RPC client.
+ * @param {string} dir - Path for serch.
+ * @returns {Array} - List of files inside the path.
+ */
+function findAllFiles(dir, files_) {
+  let files = files_ || [];
+  let dirs = fs.readdirSync(dir);
+  for(i=0;i<dirs.length;i++){
+    let fullDir = path.join(dir, dirs[i]);
+    if(!fs.statSync(fullDir).isDirectory()){
+        files.push(fullDir);
+    }
+  }
+  return files;
+}
 
 /**
  * Connect into RPC server and return a RPC client.
@@ -184,4 +202,5 @@ module.exports = {
     ensurePath,
     startRpc,
     rpcRequest,
+    findAllFiles,
 }
