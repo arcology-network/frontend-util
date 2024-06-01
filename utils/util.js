@@ -3,7 +3,7 @@ const { JRPCClient, HttpAdapter } = require("@mahsumurebe/jrpc-client")
 const path = require('path');
 
 /**
- * Connect into RPC server and return a RPC client.
+ * Find all the files in the folder.
  * @param {string} dir - Path for serch.
  * @returns {Array} - List of files inside the path.
  */
