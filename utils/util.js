@@ -175,6 +175,19 @@ function appendTo(filehandle,content){
   filehandle.write(content);
 }
 
+/**
+ * Appending signed tx to a file through a stream.
+ * @param {filestream} txfile - File stream.
+ * @param {filestream} signer - signer object.
+ * @param {string} tx - The content of signed tx.
+ * @returns {void}
+ */
+async function writePreSignedTxFile(txfile,signer,tx){
+  const fulltx=await signer.populateTransaction(tx)
+  const rawtx=await signer.signTransaction(fulltx)
+  frontendUtil.appendTo(txfile,rawtx+',\n')
+}
+
 
 /**
  * Make sure the directory exists, otherwise create it.
@@ -203,4 +216,5 @@ module.exports = {
     startRpc,
     rpcRequest,
     findAllFiles,
+    writePreSignedTxFile,
 }
