@@ -185,7 +185,7 @@ function appendTo(filehandle,content){
 async function writePreSignedTxFile(txfile,signer,tx){
   const fulltx=await signer.populateTransaction(tx)
   const rawtx=await signer.signTransaction(fulltx)
-  frontendUtil.appendTo(txfile,rawtx+',\n')
+  appendTo(txfile,rawtx+',\n')
 }
 
 
