@@ -1,6 +1,6 @@
 {
   "name": "@arcologynetwork/frontend-util",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A collection of frontend utilities used by Arcology Network",
   "main": "utils/util.js",
   "scripts": {},
