@@ -116,19 +116,15 @@ function showResult(result){
  * @param {Object} receipt - The transaction receipt object.
  * @param {Object} contract - The contract object.
  * @param {string} eventName - The name of the event to parse.
- * @param {bool} isnum - Is the returned result of numerical.
  * @returns {Object|string} - The data of the event if found, otherwise an empty string.
  */
-function parseEvent(receipt,contract,eventName,isnum){
+function parseEvent(receipt,contract,eventName){
   if(receipt.hasOwnProperty("status")&&receipt.status==1){
     for (const log of receipt.logs) {
       try {
         const parsed = contract.interface.parseLog(log);
         if(eventName===parsed.name){
           for(const arg of parsed.args){
-            if(isnum)
-              return Number(arg);
-              else
               return arg;
           }
         }
@@ -137,6 +133,7 @@ function parseEvent(receipt,contract,eventName,isnum){
       }
     }
   }
+  return "";
 }
 
 /**
