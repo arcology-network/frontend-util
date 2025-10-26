@@ -47,7 +47,7 @@ async function rpcRequest(client,method,paramsList) {
   }).then((b) => {
       block=b.result;
   }).catch((error) => {
-      block="";
+      console.log(error);
   })
   return block;
 }
